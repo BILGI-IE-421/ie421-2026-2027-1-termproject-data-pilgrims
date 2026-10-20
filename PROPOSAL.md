@@ -11,6 +11,7 @@ The Big Mac Index is often taught as a simple test of purchasing power parity, b
 ## The data
 
 | Dataset | Link | What is in it |
+|---|---|---|
 |ai_gpr_data_daily.csv|https://www.matteoiacoviello.com/gpr.htm|An index that uses AI to convert global news into risk scores.|
 |big-mac-2025-01-01.xls|https://github.com/TheEconomist/big-mac-data|Big Mac prices and index values for about 55 economies, 2000–2025.|
 |bigmac.csvs|https://bigmacindex.app/data/|Big Mac prices, exchange rates, and raw and GDP-adjusted index values for 56 economies (2000–2026).|
