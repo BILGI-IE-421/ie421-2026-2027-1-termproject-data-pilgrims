@@ -6,13 +6,12 @@
 
 ## The problem
 
-The Big Mac Index is often taught as a simple test of purchasing power parity, but it compares slow-moving menu prices with fast-moving exchange rates, so its currency gaps may reflect temporary shocks rather than lasting differences in purchasing power. Oil is a likely source of such shocks: geopolitical news can move Brent crude within days, and oil prices move the currencies of oil-exporting and oil-importing countries. Combining daily Brent prices, a geopolitical risk index, verified oil-related news events and Big Mac data from 2000 onwards, this project examines how news drives oil prices and whether the link between oil and Big Mac currency gaps changes across countries and during major oil shocks. This helps readers judge when the index can be trusted.
+The Big Mac Index is often taught as a simple test of purchasing power parity (PPP). However, it compares slow-moving menu prices with fast-moving exchange rates, so the currency gaps it reports may partly reflect temporary shocks rather than lasting differences in purchasing power. Oil prices are a likely source of such shocks, because they move the currencies of oil-exporting and oil-importing countries in different directions. This project combines daily Brent crude prices, Big Mac Index data and Energy Institute country-level oil data from 2000 onwards. It asks whether oil price shocks distort the currency valuations implied by the Big Mac Index. It looks at how strongly Big Mac currency gaps move with oil prices, whether that link differs between oil exporters and importers, and whether it gets stronger during major oil shocks. The results will help readers judge when the index can be read as a reliable PPP signal and when it is mostly picking up oil-driven currency movements.
 
 ## The data
 
 | Dataset | Link | What is in it |
 |---|---|---|
-|ai_gpr_data_daily.csv|https://www.matteoiacoviello.com/gpr.htm|An index that uses AI to convert global news into risk scores.|
 |big-mac-2025-01-01.xls|https://github.com/TheEconomist/big-mac-data|Big Mac prices and index values for about 55 economies, 2000–2025.|
 |bigmac.csvs|https://bigmacindex.app/data/|Big Mac prices, exchange rates, and raw and GDP-adjusted index values for 56 economies (2000–2026).|
 |RBRTEd.xls|https://www.eia.gov/dnav/pet/hist/RBRTED.htm|Daily Europe Brent crude spot prices in US dollars per barrel (1987–present).|
@@ -20,6 +19,6 @@ The Big Mac Index is often taught as a simple test of purchasing power parity, b
 
 ## Our questions
 
-1. How strongly are spikes in oil-related geopolitical news followed by Brent price movements, and does the response differ by type of event?
-2. Does the pattern between oil prices and Big Mac measures differ during major oil-market disruption periods compared with calmer periods?
-3. How has the relationship between Brent oil prices, oil-related geopolitical risk, and Big Mac Index currency gaps changed across countries from 2000 to the latest matched data, and did that pattern differ during major oil shocks compared with calmer periods?
+1. Is the association between Brent price changes and Big Mac currency gaps stronger in periods of high oil-price volatility than in calm periods?
+2. Is the relationship between Brent and Big Mac currency gaps stable over time, or does it strengthen and weaken across 2000–2025?
+3. How much of the cross-country spread in Big Mac currency gaps is explained by the difference between oil exporters and oil importers, and does that share grow when oil prices are higher?
