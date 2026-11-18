@@ -1,0 +1,280 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Data Pilgrims | IE 421</title>
+
+    <style>
+        :root {
+            --navy: #17365D;
+            --text: #273444;
+            --muted: #64748B;
+            --border: #E2E8F0;
+            --background: #F8FAFC;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        header {
+            background: var(--navy);
+            color: white;
+            padding: 64px 24px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: clamp(26px, 4vw, 40px);
+            max-width: 950px;
+            margin: 0 auto 16px;
+            line-height: 1.25;
+        }
+
+        header p {
+            opacity: 0.85;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 28px;
+        }
+
+        h2 {
+            color: var(--navy);
+            margin-top: 0;
+        }
+
+        h3 {
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .figure {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+
+        .caption {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .links a {
+            display: inline-block;
+            margin-right: 20px;
+            color: var(--navy);
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--muted);
+            padding: 24px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            section {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <p>IE 421 — Data Science for Engineers</p>
+
+        <h1>
+            When Oil Markets Shake, Do Burgers Tell a Different Story?
+            A Big Mac Index Analysis
+        </h1>
+
+        <p>Data Pilgrims | M2 Data & EDA Checkpoint</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>Project Overview</h2>
+
+            <p>
+                This project investigates the relationship between
+                global oil price movements and Big Mac Index currency
+                valuation gaps across economies.
+            </p>
+
+            <p>
+                The analysis combines The Economist's Big Mac Index,
+                Brent crude oil prices from the U.S. Energy Information
+                Administration (EIA), and oil production and consumption
+                statistics from the Energy Institute.
+            </p>
+
+            <p>
+                The merged historical dataset contains 2,011
+                economy-edition observations and 18 variables.
+                The analysis is exploratory and does not establish
+                causal relationships.
+            </p>
+        </section>
+
+        <section>
+            <h2>Figure 1 — Oil Prices and Big Mac Valuation Changes</h2>
+
+            <img
+                class="figure"
+                src="visuals/fig1_relationship_rq1.png"
+                alt="Scatterplot comparing changes in Brent oil prices and Big Mac valuation gaps during calm and high-movement periods"
+            >
+
+            <h3>Interpretation</h3>
+
+            <p>
+                Each point represents one Big Mac publication edition,
+                with valuation-gap changes averaged across economies
+                that appear in consecutive editions.
+            </p>
+
+            <p>
+                Calm and high-movement oil-price intervals show
+                different descriptive patterns. The fitted lines
+                summarize associations within each group, but
+                they do not establish that oil-price movements
+                caused changes in currency valuation gaps.
+            </p>
+
+            <p class="caption">
+                Sources: The Economist Big Mac Index and EIA Brent
+                crude oil prices. High-movement intervals are defined
+                using the standardized absolute Brent price change.
+            </p>
+        </section>
+
+        <section>
+            <h2>Figure 2 — Historical Stability of the Relationship</h2>
+
+            <img
+                class="figure"
+                src="visuals/fig3_period_relationships_rq2.png"
+                alt="Four small-multiple scatterplots comparing Brent oil-price movements and Big Mac valuation changes across historical periods"
+            >
+
+            <h3>Interpretation</h3>
+
+            <p>
+                The visualization divides the analysis into four
+                historical periods: 2001–2006, 2007–2013,
+                2014–2019, and 2020–2026.
+            </p>
+
+            <p>
+                The observed associations differ across periods.
+                The first three periods show positive descriptive
+                relationships, whereas the 2020–2026 period shows
+                a negative relationship in the included dataset.
+            </p>
+
+            <p>
+                Shared axes support direct comparison, but each
+                period contains a relatively small number of editions.
+                Consequently, the correlations are sensitive to
+                individual observations.
+            </p>
+
+            <p class="caption">
+                Sources: The Economist Big Mac Index and EIA Brent
+                crude oil prices. Pearson correlation coefficients
+                are descriptive and should not be interpreted
+                as evidence of causation.
+            </p>
+        </section>
+
+        <section>
+            <h2>Data Sources and Methodology</h2>
+
+            <p>
+                The Economist provides Big Mac prices and raw
+                USD valuation gaps. EIA provides daily Brent
+                crude oil spot prices, measured in US dollars
+                per barrel. The Energy Institute provides
+                country-level oil production and consumption data.
+            </p>
+
+            <p>
+                The datasets are aligned to Big Mac publication
+                dates. Brent prices are summarized using a
+                preceding 30-day average, while annual oil
+                exposure measures are matched using the
+                previous calendar year.
+            </p>
+
+            <h3>Limitations</h3>
+
+            <p>
+                Data coverage varies across countries and years.
+                The historical Energy Institute snapshot contains
+                assumptions affecting exporter/importer classification.
+                The separately provided Energy Institute 2026 PDF
+                covers 2015–2025 and does not independently
+                reproduce the full historical oil series.
+            </p>
+
+            <p>
+                These visualizations describe statistical
+                associations rather than causal effects.
+            </p>
+        </section>
+
+        <section class="links">
+            <h2>Project Resources</h2>
+
+            <a href="https://github.com/BILGI-IE-421/ie421-2026-2027-1-termproject-data-pilgrims">
+                GitHub Repository
+            </a>
+
+            <a href="data/README.md">
+                Data Cards
+            </a>
+
+            <a href="scripts/eda.ipynb">
+                EDA Notebook
+            </a>
+
+            <a href="PROPOSAL.md">
+                Project Proposal
+            </a>
+        </section>
+
+    </main>
+
+    <footer>
+        IE 421 — Data Science for Engineers | Data Pilgrims
+    </footer>
+
+</body>
+</html>
