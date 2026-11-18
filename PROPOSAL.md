@@ -1,4 +1,4 @@
-# Burgers, Barrels and Headlines: Does the Big Mac Index Still Measure Purchasing Power When Oil Shocks Hit?
+# When Oil Markets Shake, Do Burgers Tell a Different Story? A Big Mac Index Analysis
 
 **Team:** data-pilgrims · **Theme:** T7 The Connected World: trade, flights, prices
 
