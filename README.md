@@ -11,7 +11,7 @@ Members: Emir Karaçayır (123203010) · Emirhan Ahmet Yılmaz (122203035) · Be
 ## Files (Explain each of them with a sentence)
 - `data/`: Contains the cleaned Big Mac Index, Brent crude oil prices, Energy Institute oil production and consumption data, and the merged analytical dataset. Full dataset descriptions, sources, and cleaning decisions are documented in data/README.md. Raw downloads are stored in data/raw/ and are not committed.
 - `scripts/`: Contains the scripts for downloading, cleaning, analyzing, and visualizing the data. download_data.py downloads the original Big Mac and EIA Brent data; preprocess.py cleans, validates, and merges the datasets, including Energy Institute PDF extraction; eda.ipynb performs exploratory analysis; and figures.py generates the project visualizations.
-- `visuals/`: Includes the generated figures. (Explain which figure shows what.)
+- `visuals/`: Includes the generated figures. `figure1.png` shows the relationship between Brent oil-price changes and Big Mac valuation-gap changes during calm and high-movement periods; `figure2.png` compares this relationship across four historical periods (2001–2006, 2007–2013, 2014–2019, and 2020–2026) to examine how it changes over time.
 - `index.html` and `css/`: Main webpage for GitHub Pages hosting.
 - `PROPOSAL.md`, `AI_USAGE.md`: Contain the project proposal and documentation of AI-assisted work.
 - `requirements.txt`:  Lists the Python libraries required to run the project.
